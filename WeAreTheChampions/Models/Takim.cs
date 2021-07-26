@@ -11,22 +11,26 @@ namespace WeAreTheChampions.Models
     [Table("Takimlar")]
     public class Takim
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        // https://www.entityframeworktutorial.net/code-first/configure-many-to-many-relationship-in-code-first.aspx
+        public Takim()
+        {
+            this.Renkler = new HashSet<Renk>();
+        }
         public int Id { get; set; }
 
         [Required, MaxLength(75)]
         public string TakimAd { get; set; }
-        //public int Takim1Id { get; set; }
-        //public int Takim2Id { get; set; }
 
         public virtual ICollection<Oyuncu> Oyuncular { get; set; }
         public virtual ICollection<Renk> Renkler { get; set; }
 
-        [InverseProperty("Takim1")]
-        public virtual ICollection<Mac> Maclar1 { get; set; }
-        [InverseProperty("Takim2")]
-        public virtual ICollection<Mac> Maclar2 { get; set; }
+        // https://www.entityframeworktutorial.net/code-first/inverseproperty-dataannotations-attribute-in-code-first.aspx 
+
+        [InverseProperty ("TakimA")]
+        public virtual ICollection<Mac> MaclarA { get; set; }
+        [InverseProperty("TakimB")]
+        public virtual ICollection<Mac> MaclarB { get; set; }
+
         public override string ToString()
         {
             return TakimAd;

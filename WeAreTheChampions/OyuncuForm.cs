@@ -32,7 +32,6 @@ namespace WeAreTheChampions
 
         private void TakimlariYukle()
         {
-            cmbTakim.Items.Add("Seçilmedi !");
             cmbTakim.DataSource = _db.Takimlar.OrderBy(x => x.TakimAd).ToList();
         }
 

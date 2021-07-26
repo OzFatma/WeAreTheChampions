@@ -42,7 +42,6 @@ namespace WeAreTheChampions
             this.tsmRenkler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRenkEkle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOyuncular = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvListe = new System.Windows.Forms.DataGridView();
             this.btnYeniKarsilasma = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
@@ -52,7 +51,8 @@ namespace WeAreTheChampions
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tsmOyuncuEkle = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,7 @@ namespace WeAreTheChampions
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListe)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,28 +106,18 @@ namespace WeAreTheChampions
             // tsmRenkEkle
             // 
             this.tsmRenkEkle.Name = "tsmRenkEkle";
-            this.tsmRenkEkle.Size = new System.Drawing.Size(129, 22);
+            this.tsmRenkEkle.Size = new System.Drawing.Size(180, 22);
             this.tsmRenkEkle.Text = "Renk Ekle";
             this.tsmRenkEkle.Click += new System.EventHandler(this.tsmRenkEkle_Click);
             // 
             // tsmOyuncular
             // 
+            this.tsmOyuncular.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOyuncuEkle});
             this.tsmOyuncular.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tsmOyuncular.Name = "tsmOyuncular";
             this.tsmOyuncular.Size = new System.Drawing.Size(75, 20);
             this.tsmOyuncular.Text = "Oyuncular";
-            this.tsmOyuncular.Click += new System.EventHandler(this.tsmOyuncular_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(11, 116);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Karşılaşmalar";
             // 
             // dgvListe
             // 
@@ -205,7 +196,7 @@ namespace WeAreTheChampions
             // 
             this.lblTakimA.AutoSize = true;
             this.lblTakimA.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTakimA.Location = new System.Drawing.Point(5, 9);
+            this.lblTakimA.Location = new System.Drawing.Point(2, 4);
             this.lblTakimA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTakimA.Name = "lblTakimA";
             this.lblTakimA.Size = new System.Drawing.Size(57, 18);
@@ -217,7 +208,7 @@ namespace WeAreTheChampions
             this.lblTakimB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTakimB.AutoSize = true;
             this.lblTakimB.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTakimB.Location = new System.Drawing.Point(168, 9);
+            this.lblTakimB.Location = new System.Drawing.Point(569, 4);
             this.lblTakimB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTakimB.Name = "lblTakimB";
             this.lblTakimB.Size = new System.Drawing.Size(57, 18);
@@ -227,62 +218,72 @@ namespace WeAreTheChampions
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblTakimA);
             this.panel1.Controls.Add(this.lblTakimB);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(685, 31);
+            this.panel1.Location = new System.Drawing.Point(10, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 100);
+            this.panel1.Size = new System.Drawing.Size(915, 81);
             this.panel1.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(171, 41);
+            this.label3.Location = new System.Drawing.Point(572, 27);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 42);
+            this.label3.Size = new System.Drawing.Size(339, 34);
             this.label3.TabIndex = 10;
             this.label3.Text = "TakımBRenk";
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(5, 40);
+            this.label2.Location = new System.Drawing.Point(2, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 42);
+            this.label2.Size = new System.Drawing.Size(339, 34);
             this.label2.TabIndex = 9;
             this.label2.Text = "TakımARenk";
             // 
-            // label4
+            // tsmOyuncuEkle
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(100, 27);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 19);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "vs.";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tsmOyuncuEkle.Name = "tsmOyuncuEkle";
+            this.tsmOyuncuEkle.Size = new System.Drawing.Size(180, 22);
+            this.tsmOyuncuEkle.Text = "Oyuncu Ekle";
+            this.tsmOyuncuEkle.Click += new System.EventHandler(this.tsmOyuncuEkle_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::WeAreTheChampions.Properties.Resources.vs_versus_icon_logo_battle_fight_game_212005_461;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(391, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 52);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "Takim1";
-            this.Column1.HeaderText = "Takım A";
+            this.Column1.DataPropertyName = "TakimA_Id";
+            this.Column1.HeaderText = "Takım";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "Takim2";
-            this.Column2.HeaderText = "Takım B";
+            this.Column2.DataPropertyName = "TakimB_Id";
+            this.Column2.HeaderText = "Takım";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
@@ -332,7 +333,6 @@ namespace WeAreTheChampions
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnYeniKarsilasma);
             this.Controls.Add(this.dgvListe);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -346,6 +346,7 @@ namespace WeAreTheChampions
             ((System.ComponentModel.ISupportInitialize)(this.dgvListe)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,7 +358,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.ToolStripMenuItem tsmTakimlar;
         private System.Windows.Forms.ToolStripMenuItem tsmRenkler;
         private System.Windows.Forms.ToolStripMenuItem tsmOyuncular;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListe;
         private System.Windows.Forms.Button btnYeniKarsilasma;
         private System.Windows.Forms.Button btnSil;
@@ -369,7 +369,8 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem tsmOyuncuEkle;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

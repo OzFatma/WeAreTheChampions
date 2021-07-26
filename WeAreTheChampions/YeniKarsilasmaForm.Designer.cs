@@ -36,9 +36,7 @@ namespace WeAreTheChampions
             this.label2 = new System.Windows.Forms.Label();
             this.dtpMacTarih = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnOlustur = new System.Windows.Forms.Button();
-            this.mskSaat = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.nudSkorA = new System.Windows.Forms.NumericUpDown();
@@ -52,7 +50,7 @@ namespace WeAreTheChampions
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 111);
+            this.label1.Location = new System.Drawing.Point(22, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 18);
@@ -61,26 +59,30 @@ namespace WeAreTheChampions
             // 
             // cmbTakimA
             // 
+            this.cmbTakimA.DisplayMember = "TakimAd";
             this.cmbTakimA.FormattingEnabled = true;
-            this.cmbTakimA.Location = new System.Drawing.Point(98, 108);
+            this.cmbTakimA.Location = new System.Drawing.Point(98, 58);
             this.cmbTakimA.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbTakimA.Name = "cmbTakimA";
             this.cmbTakimA.Size = new System.Drawing.Size(100, 26);
             this.cmbTakimA.TabIndex = 2;
+            this.cmbTakimA.ValueMember = "Id";
             // 
             // cmbTakimB
             // 
+            this.cmbTakimB.DisplayMember = "TakimAd";
             this.cmbTakimB.FormattingEnabled = true;
-            this.cmbTakimB.Location = new System.Drawing.Point(98, 151);
+            this.cmbTakimB.Location = new System.Drawing.Point(98, 101);
             this.cmbTakimB.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbTakimB.Name = "cmbTakimB";
             this.cmbTakimB.Size = new System.Drawing.Size(100, 26);
             this.cmbTakimB.TabIndex = 4;
+            this.cmbTakimB.ValueMember = "Id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 154);
+            this.label2.Location = new System.Drawing.Point(21, 104);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 18);
@@ -89,11 +91,13 @@ namespace WeAreTheChampions
             // 
             // dtpMacTarih
             // 
-            this.dtpMacTarih.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpMacTarih.CustomFormat = "    dd.MM.yyyy - HH:mm";
+            this.dtpMacTarih.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpMacTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMacTarih.Location = new System.Drawing.Point(98, 12);
             this.dtpMacTarih.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpMacTarih.Name = "dtpMacTarih";
-            this.dtpMacTarih.Size = new System.Drawing.Size(238, 25);
+            this.dtpMacTarih.Size = new System.Drawing.Size(238, 27);
             this.dtpMacTarih.TabIndex = 5;
             // 
             // label3
@@ -106,20 +110,10 @@ namespace WeAreTheChampions
             this.label3.TabIndex = 6;
             this.label3.Text = "Maç Tarihi :";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 53);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Maç Saati :";
-            // 
             // btnOlustur
             // 
             this.btnOlustur.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOlustur.Location = new System.Drawing.Point(98, 243);
+            this.btnOlustur.Location = new System.Drawing.Point(98, 193);
             this.btnOlustur.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnOlustur.Name = "btnOlustur";
             this.btnOlustur.Size = new System.Drawing.Size(100, 36);
@@ -128,19 +122,10 @@ namespace WeAreTheChampions
             this.btnOlustur.UseVisualStyleBackColor = true;
             this.btnOlustur.Click += new System.EventHandler(this.btnOlustur_Click);
             // 
-            // mskSaat
-            // 
-            this.mskSaat.Location = new System.Drawing.Point(98, 50);
-            this.mskSaat.Mask = "00:00";
-            this.mskSaat.Name = "mskSaat";
-            this.mskSaat.Size = new System.Drawing.Size(100, 26);
-            this.mskSaat.TabIndex = 10;
-            this.mskSaat.ValidatingType = typeof(System.DateTime);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(220, 153);
+            this.label5.Location = new System.Drawing.Point(220, 103);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 18);
@@ -150,7 +135,7 @@ namespace WeAreTheChampions
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(221, 110);
+            this.label6.Location = new System.Drawing.Point(221, 60);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 18);
@@ -159,14 +144,14 @@ namespace WeAreTheChampions
             // 
             // nudSkorA
             // 
-            this.nudSkorA.Location = new System.Drawing.Point(285, 108);
+            this.nudSkorA.Location = new System.Drawing.Point(285, 58);
             this.nudSkorA.Name = "nudSkorA";
             this.nudSkorA.Size = new System.Drawing.Size(51, 26);
             this.nudSkorA.TabIndex = 13;
             // 
             // nudSkorB
             // 
-            this.nudSkorB.Location = new System.Drawing.Point(285, 151);
+            this.nudSkorB.Location = new System.Drawing.Point(285, 101);
             this.nudSkorB.Name = "nudSkorB";
             this.nudSkorB.Size = new System.Drawing.Size(51, 26);
             this.nudSkorB.TabIndex = 14;
@@ -174,7 +159,7 @@ namespace WeAreTheChampions
             // cmbSonuc
             // 
             this.cmbSonuc.FormattingEnabled = true;
-            this.cmbSonuc.Location = new System.Drawing.Point(98, 194);
+            this.cmbSonuc.Location = new System.Drawing.Point(98, 144);
             this.cmbSonuc.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbSonuc.Name = "cmbSonuc";
             this.cmbSonuc.Size = new System.Drawing.Size(100, 26);
@@ -183,7 +168,7 @@ namespace WeAreTheChampions
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 197);
+            this.label7.Location = new System.Drawing.Point(36, 147);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 18);
@@ -195,16 +180,14 @@ namespace WeAreTheChampions
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(364, 305);
+            this.ClientSize = new System.Drawing.Size(364, 243);
             this.Controls.Add(this.cmbSonuc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.nudSkorB);
             this.Controls.Add(this.nudSkorA);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.mskSaat);
             this.Controls.Add(this.btnOlustur);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpMacTarih);
             this.Controls.Add(this.cmbTakimB);
@@ -231,9 +214,7 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpMacTarih;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnOlustur;
-        private System.Windows.Forms.MaskedTextBox mskSaat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nudSkorA;

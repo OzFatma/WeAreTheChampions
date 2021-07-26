@@ -23,7 +23,7 @@ namespace WeAreTheChampions
 
         private void Listele()
         {
-            dgvListe.DataSource = db.Maclar.OrderBy(x => x.MacZamani).ThenBy(x => x.MacSaati).ToList();
+            dgvListe.DataSource = db.Maclar.OrderBy(x => x.MacZamani).ToList();
         }
 
         private void tsmTakimEkle_Click(object sender, EventArgs e)
@@ -35,7 +35,13 @@ namespace WeAreTheChampions
         private void btnYeniKarsilasma_Click(object sender, EventArgs e)
         {
             YeniKarsilasmaForm frm = new YeniKarsilasmaForm(db);
+            frm.ListeGuncellendi += Frm_ListeGuncellendi;
             DialogResult dr = frm.ShowDialog();
+        }
+
+        private void Frm_ListeGuncellendi(object sender, EventArgs e)
+        {
+            Listele();
         }
 
         private void tsmRenkEkle_Click(object sender, EventArgs e)
@@ -44,7 +50,7 @@ namespace WeAreTheChampions
             DialogResult dr = frm.ShowDialog();
         }
 
-        private void tsmOyuncular_Click(object sender, EventArgs e)
+        private void tsmOyuncuEkle_Click(object sender, EventArgs e)
         {
             OyuncuForm frm = new OyuncuForm(db);
             DialogResult dr = frm.ShowDialog();

@@ -12,23 +12,23 @@ namespace WeAreTheChampions.Models
     [Table("Maclar")]
     public class Mac
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public DateTime MacZamani { get; set; }
-        public DateTime MacSaati { get; set; }
+        public DateTime? MacZamani { get; set; }
 
-        public int? Skor1 { get; set; }
-        public int? Skor2 { get; set; }
+        //public DateTime MacSaati { get; set; }
+        public int TakimA_Id { get; set; }
+        public int TakimB_Id { get; set; }
+        public int? SkorA { get; set; }
+        public int? SkorB { get; set; }
         public Sonuc? Sonuc { get; set; }
+
+       // https://www.entityframeworktutorial.net/code-first/inverseproperty-dataannotations-attribute-in-code-first.aspx
      
-        [ForeignKey("Takim1")]
-        public int Takim1Id { get; set; }
-        public virtual Takim Takim1 { get; set; }
+        public virtual Takim TakimA { get; set; }
 
-        [ForeignKey("Takim2")]
-        public int Takim2Id { get; set; }
-        public virtual Takim Takim2 { get; set; }
+        public virtual Takim TakimB { get; set; }
 
+        //[ForeignKey("Takim1")]
+        //[ForeignKey("Takim2")]
     }
 }

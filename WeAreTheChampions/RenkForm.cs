@@ -14,7 +14,6 @@ namespace WeAreTheChampions
     public partial class RenkForm : Form
     {
         private readonly ChampionsContext _db;
-        Renk renkler;
 
         public RenkForm(ChampionsContext db)
         {

@@ -11,22 +11,21 @@ namespace WeAreTheChampions.Models
     [Table("Oyuncular")]
     public class Oyuncu
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required,MaxLength(50)]
+        [Required,MaxLength(25)]
         public string OyuncuAd { get; set; }
+        [Required, MaxLength(25)]
         public string OyuncuSoyad { get; set; }
 
-        [ForeignKey("Takim")]
+        //[ForeignKey("Takim")]
         public int TakimId { get; set; }
 
         public virtual Takim Takim { get; set; }
 
         public override string ToString()
         {
-            return OyuncuAd;
+            return OyuncuAd+" "+OyuncuSoyad;
         }
     }
 }
