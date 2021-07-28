@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WeAreTheChampions.Enums;
 using WeAreTheChampions.Models;
 
 namespace WeAreTheChampions
@@ -14,6 +15,7 @@ namespace WeAreTheChampions
     public partial class AnaForm : Form
     {
         ChampionsContext db = new ChampionsContext();
+        Mac secilen = new Mac();
         public AnaForm()
         {
             InitializeComponent();
@@ -23,13 +25,21 @@ namespace WeAreTheChampions
 
         private void Listele()
         {
-            dgvListe.DataSource = db.Maclar.OrderBy(x => x.MacZamani).ToList();
+            IQueryable<Mac> sorgu = db.Maclar;
+            
+            if (chkOynananGizle.Checked)
+            {
+                sorgu = sorgu.Where(x => !x.Sonuc.HasValue );
+            }
+
+            dgvListe.DataSource = sorgu.OrderByDescending(x => x.MacZamani).ToList();
         }
 
         private void tsmTakimEkle_Click(object sender, EventArgs e)
         {
             TakimForm frm = new TakimForm(db);
             DialogResult dr = frm.ShowDialog();
+            
         }
 
         private void btnYeniKarsilasma_Click(object sender, EventArgs e)
@@ -54,6 +64,36 @@ namespace WeAreTheChampions
         {
             OyuncuForm frm = new OyuncuForm(db);
             DialogResult dr = frm.ShowDialog();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            Mac secilen = (Mac)dgvListe.SelectedRows[0].DataBoundItem;
+            db.Maclar.Remove(secilen);
+            db.SaveChanges();
+            Listele();
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            secilen = (Mac)dgvListe.SelectedRows[0].DataBoundItem;
+            if (secilen!=null)
+            {
+                KarsilasmaDuzenleForm frm = new KarsilasmaDuzenleForm(db,secilen);
+                frm.ListeGuncellendi += Frm_ListeGuncellendi1;
+                DialogResult dr = frm.ShowDialog();
+
+            }
+        }
+
+        private void Frm_ListeGuncellendi1(object sender, EventArgs e)
+        {
+            Listele();
+        }
+
+        private void chkOynananGizle_CheckedChanged(object sender, EventArgs e)
+        {
+            Listele();
         }
     }
 }

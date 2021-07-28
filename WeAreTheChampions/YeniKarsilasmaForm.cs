@@ -15,9 +15,10 @@ namespace WeAreTheChampions
     public partial class YeniKarsilasmaForm : Form
     {
         public event EventHandler ListeGuncellendi;
+       
+
         private readonly ChampionsContext _db;
-        Takim takimA = new Takim();
-        Takim takimB = new Takim();
+        Mac duzenlenen;
 
 
         public YeniKarsilasmaForm(ChampionsContext db)
@@ -27,7 +28,9 @@ namespace WeAreTheChampions
             TakimlariYukle();
             SonuclariYukle();
             FormuResetle();
+            
         }
+
 
         private void SonuclariYukle()
         {
@@ -45,14 +48,17 @@ namespace WeAreTheChampions
 
         private void btnOlustur_Click(object sender, EventArgs e)
         {
+
             Mac mac = new Mac()
             {
                 MacZamani = dtpMacTarih.Value,
                 TakimA_Id = cmbTakimA.SelectedIndex,
                 TakimB_Id = cmbTakimB.SelectedIndex,
+                TakimAAd = cmbTakimA.Text,
+                TakimBAd = cmbTakimB.Text,
                 SkorA = (int)nudSkorA.Value,
                 SkorB = (int)nudSkorB.Value,
-                Sonuc = (Sonuc)cmbSonuc.SelectedItem
+                Sonuc = (Sonuc?)cmbSonuc.SelectedItem
             };
             _db.Maclar.Add(mac);
             _db.SaveChanges();

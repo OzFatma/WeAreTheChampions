@@ -18,6 +18,8 @@ namespace WeAreTheChampions.Models
         //public DateTime MacSaati { get; set; }
         public int TakimA_Id { get; set; }
         public int TakimB_Id { get; set; }
+        public string TakimAAd { get; set; }
+        public string TakimBAd { get; set; }
         public int? SkorA { get; set; }
         public int? SkorB { get; set; }
         public Sonuc? Sonuc { get; set; }
