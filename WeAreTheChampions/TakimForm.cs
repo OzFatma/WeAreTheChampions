@@ -36,13 +36,13 @@ namespace WeAreTheChampions
                 return;
             }
 
-            if (duzenlenen==null)
+            if (duzenlenen == null)
             {
-            takim = new Takim()
-            {
-                TakimAd = txtAd.Text
-            };
-            _db.Takimlar.Add(takim);
+                takim = new Takim()
+                {
+                    TakimAd = txtAd.Text
+                };
+                _db.Takimlar.Add(takim);
             }
             else
             {
@@ -93,6 +93,15 @@ namespace WeAreTheChampions
             lstTakimlar.Enabled = false;
             btnSil.Enabled = false;
             btnDuzenle.Enabled = false;
+        }
+
+        private void lstTakimlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstTakimlar.SelectedIndex != -1)
+            {
+                Takim secilen = (Takim)lstTakimlar.SelectedItem;
+                lstOyuncular.DataSource = _db.Oyuncular.Where(x => x.Takim.TakimAd == secilen.TakimAd).ToList();
+            }
         }
     }
 }

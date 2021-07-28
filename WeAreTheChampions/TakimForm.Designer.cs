@@ -39,15 +39,14 @@ namespace WeAreTheChampions
             this.btnSil = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
             this.lstTakimlar = new System.Windows.Forms.ListBox();
+            this.lstOyuncular = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtAd
             // 
-            this.txtAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAd.Location = new System.Drawing.Point(82, 23);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(192, 26);
+            this.txtAd.Size = new System.Drawing.Size(277, 26);
             this.txtAd.TabIndex = 0;
             // 
             // label1
@@ -61,12 +60,10 @@ namespace WeAreTheChampions
             // 
             // cmbRenk
             // 
-            this.cmbRenk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRenk.FormattingEnabled = true;
             this.cmbRenk.Location = new System.Drawing.Point(82, 57);
             this.cmbRenk.Name = "cmbRenk";
-            this.cmbRenk.Size = new System.Drawing.Size(192, 26);
+            this.cmbRenk.Size = new System.Drawing.Size(196, 26);
             this.cmbRenk.TabIndex = 2;
             // 
             // label2
@@ -80,9 +77,8 @@ namespace WeAreTheChampions
             // 
             // btnEkle
             // 
-            this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEkle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEkle.Location = new System.Drawing.Point(280, 57);
+            this.btnEkle.Location = new System.Drawing.Point(284, 57);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(75, 26);
             this.btnEkle.TabIndex = 5;
@@ -94,7 +90,7 @@ namespace WeAreTheChampions
             // 
             this.btnDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDuzenle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDuzenle.Location = new System.Drawing.Point(81, 256);
+            this.btnDuzenle.Location = new System.Drawing.Point(81, 248);
             this.btnDuzenle.Name = "btnDuzenle";
             this.btnDuzenle.Size = new System.Drawing.Size(75, 31);
             this.btnDuzenle.TabIndex = 6;
@@ -104,9 +100,8 @@ namespace WeAreTheChampions
             // 
             // btnSil
             // 
-            this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSil.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(285, 256);
+            this.btnSil.Location = new System.Drawing.Point(280, 248);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 31);
             this.btnSil.TabIndex = 7;
@@ -118,7 +113,7 @@ namespace WeAreTheChampions
             // 
             this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnIptal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnIptal.Location = new System.Drawing.Point(162, 256);
+            this.btnIptal.Location = new System.Drawing.Point(162, 248);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(75, 31);
             this.btnIptal.TabIndex = 8;
@@ -132,17 +127,28 @@ namespace WeAreTheChampions
             this.lstTakimlar.DisplayMember = "TakimAd";
             this.lstTakimlar.FormattingEnabled = true;
             this.lstTakimlar.ItemHeight = 18;
-            this.lstTakimlar.Location = new System.Drawing.Point(82, 101);
+            this.lstTakimlar.Location = new System.Drawing.Point(82, 89);
             this.lstTakimlar.Name = "lstTakimlar";
             this.lstTakimlar.Size = new System.Drawing.Size(273, 148);
             this.lstTakimlar.TabIndex = 9;
+            this.lstTakimlar.SelectedIndexChanged += new System.EventHandler(this.lstTakimlar_SelectedIndexChanged);
+            // 
+            // lstOyuncular
+            // 
+            this.lstOyuncular.FormattingEnabled = true;
+            this.lstOyuncular.ItemHeight = 18;
+            this.lstOyuncular.Location = new System.Drawing.Point(365, 23);
+            this.lstOyuncular.Name = "lstOyuncular";
+            this.lstOyuncular.Size = new System.Drawing.Size(286, 256);
+            this.lstOyuncular.TabIndex = 10;
             // 
             // TakimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(372, 299);
+            this.ClientSize = new System.Drawing.Size(662, 291);
+            this.Controls.Add(this.lstOyuncular);
             this.Controls.Add(this.lstTakimlar);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.btnSil);
@@ -174,5 +180,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnIptal;
         private System.Windows.Forms.ListBox lstTakimlar;
+        private System.Windows.Forms.ListBox lstOyuncular;
     }
 }
