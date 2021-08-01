@@ -21,11 +21,13 @@ namespace WeAreTheChampions
             _db = db;
             InitializeComponent();
             Listele();
+
         }
 
         private void Listele()
         {
             lstTakimlar.DataSource = _db.Takimlar.ToList();
+            lstOyuncular.DataSource = _db.Oyuncular.ToList();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -101,6 +103,21 @@ namespace WeAreTheChampions
             {
                 Takim secilen = (Takim)lstTakimlar.SelectedItem;
                 lstOyuncular.DataSource = _db.Oyuncular.Where(x => x.Takim.TakimAd == secilen.TakimAd).ToList();
+            }
+        }
+
+        private void btnOyuncuSil_Click(object sender, EventArgs e)
+        {
+            if (lstOyuncular.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                Oyuncu secilen = (Oyuncu)lstOyuncular.SelectedItem;
+                _db.Oyuncular.Remove(secilen);
+                _db.SaveChanges();
+                Listele();
             }
         }
     }

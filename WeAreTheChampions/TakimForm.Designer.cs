@@ -40,6 +40,7 @@ namespace WeAreTheChampions
             this.btnIptal = new System.Windows.Forms.Button();
             this.lstTakimlar = new System.Windows.Forms.ListBox();
             this.lstOyuncular = new System.Windows.Forms.ListBox();
+            this.btnOyuncuSil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAd
@@ -88,9 +89,8 @@ namespace WeAreTheChampions
             // 
             // btnDuzenle
             // 
-            this.btnDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDuzenle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDuzenle.Location = new System.Drawing.Point(81, 248);
+            this.btnDuzenle.Location = new System.Drawing.Point(84, 225);
             this.btnDuzenle.Name = "btnDuzenle";
             this.btnDuzenle.Size = new System.Drawing.Size(75, 31);
             this.btnDuzenle.TabIndex = 6;
@@ -101,7 +101,7 @@ namespace WeAreTheChampions
             // btnSil
             // 
             this.btnSil.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(280, 248);
+            this.btnSil.Location = new System.Drawing.Point(280, 225);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 31);
             this.btnSil.TabIndex = 7;
@@ -111,9 +111,8 @@ namespace WeAreTheChampions
             // 
             // btnIptal
             // 
-            this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnIptal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnIptal.Location = new System.Drawing.Point(162, 248);
+            this.btnIptal.Location = new System.Drawing.Point(164, 225);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(75, 31);
             this.btnIptal.TabIndex = 8;
@@ -129,7 +128,7 @@ namespace WeAreTheChampions
             this.lstTakimlar.ItemHeight = 18;
             this.lstTakimlar.Location = new System.Drawing.Point(82, 89);
             this.lstTakimlar.Name = "lstTakimlar";
-            this.lstTakimlar.Size = new System.Drawing.Size(273, 148);
+            this.lstTakimlar.Size = new System.Drawing.Size(273, 130);
             this.lstTakimlar.TabIndex = 9;
             this.lstTakimlar.SelectedIndexChanged += new System.EventHandler(this.lstTakimlar_SelectedIndexChanged);
             // 
@@ -139,15 +138,27 @@ namespace WeAreTheChampions
             this.lstOyuncular.ItemHeight = 18;
             this.lstOyuncular.Location = new System.Drawing.Point(365, 23);
             this.lstOyuncular.Name = "lstOyuncular";
-            this.lstOyuncular.Size = new System.Drawing.Size(286, 256);
+            this.lstOyuncular.Size = new System.Drawing.Size(246, 202);
             this.lstOyuncular.TabIndex = 10;
+            // 
+            // btnOyuncuSil
+            // 
+            this.btnOyuncuSil.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOyuncuSil.Location = new System.Drawing.Point(523, 228);
+            this.btnOyuncuSil.Name = "btnOyuncuSil";
+            this.btnOyuncuSil.Size = new System.Drawing.Size(88, 25);
+            this.btnOyuncuSil.TabIndex = 11;
+            this.btnOyuncuSil.Text = "OYUNCU SİL";
+            this.btnOyuncuSil.UseVisualStyleBackColor = true;
+            this.btnOyuncuSil.Click += new System.EventHandler(this.btnOyuncuSil_Click);
             // 
             // TakimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(662, 291);
+            this.ClientSize = new System.Drawing.Size(627, 269);
+            this.Controls.Add(this.btnOyuncuSil);
             this.Controls.Add(this.lstOyuncular);
             this.Controls.Add(this.lstTakimlar);
             this.Controls.Add(this.btnIptal);
@@ -181,5 +192,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Button btnIptal;
         private System.Windows.Forms.ListBox lstTakimlar;
         private System.Windows.Forms.ListBox lstOyuncular;
+        private System.Windows.Forms.Button btnOyuncuSil;
     }
 }
