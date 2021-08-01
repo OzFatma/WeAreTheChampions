@@ -29,6 +29,7 @@ namespace WeAreTheChampions
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OyuncuForm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.cmbTakim = new System.Windows.Forms.ComboBox();
@@ -207,6 +208,7 @@ namespace WeAreTheChampions
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OyuncuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
