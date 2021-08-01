@@ -26,8 +26,8 @@ namespace WeAreTheChampions
 
         private void Listele()
         {
-            lstTakimlar.DataSource = _db.Takimlar.ToList();
-            lstOyuncular.DataSource = _db.Oyuncular.ToList();
+            lstTakimlar.DataSource = _db.Takimlar.OrderBy(x=>x.TakimAd).ToList();
+            //lstOyuncular.DataSource = _db.Oyuncular.Where(x=>x.Takim.Id==x.TakimId).ToList();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -103,6 +103,7 @@ namespace WeAreTheChampions
             {
                 Takim secilen = (Takim)lstTakimlar.SelectedItem;
                 lstOyuncular.DataSource = _db.Oyuncular.Where(x => x.Takim.TakimAd == secilen.TakimAd).ToList();
+
             }
         }
 

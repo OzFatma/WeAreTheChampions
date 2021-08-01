@@ -53,7 +53,7 @@ namespace WeAreTheChampions
             this.cmbSonuc.Location = new System.Drawing.Point(107, 145);
             this.cmbSonuc.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbSonuc.Name = "cmbSonuc";
-            this.cmbSonuc.Size = new System.Drawing.Size(100, 27);
+            this.cmbSonuc.Size = new System.Drawing.Size(164, 27);
             this.cmbSonuc.TabIndex = 2;
             // 
             // label7
@@ -68,14 +68,14 @@ namespace WeAreTheChampions
             // 
             // nudSkorB
             // 
-            this.nudSkorB.Location = new System.Drawing.Point(294, 102);
+            this.nudSkorB.Location = new System.Drawing.Point(349, 103);
             this.nudSkorB.Name = "nudSkorB";
             this.nudSkorB.Size = new System.Drawing.Size(51, 27);
             this.nudSkorB.TabIndex = 4;
             // 
             // nudSkorA
             // 
-            this.nudSkorA.Location = new System.Drawing.Point(294, 59);
+            this.nudSkorA.Location = new System.Drawing.Point(349, 60);
             this.nudSkorA.Name = "nudSkorA";
             this.nudSkorA.Size = new System.Drawing.Size(51, 27);
             this.nudSkorA.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace WeAreTheChampions
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(221, 104);
+            this.label5.Location = new System.Drawing.Point(276, 105);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 19);
@@ -93,7 +93,7 @@ namespace WeAreTheChampions
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(222, 61);
+            this.label6.Location = new System.Drawing.Point(277, 62);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 19);
@@ -103,7 +103,7 @@ namespace WeAreTheChampions
             // btnGuncelle
             // 
             this.btnGuncelle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.Location = new System.Drawing.Point(107, 194);
+            this.btnGuncelle.Location = new System.Drawing.Point(171, 195);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(100, 36);
@@ -130,7 +130,7 @@ namespace WeAreTheChampions
             this.dtpMacTarih.Location = new System.Drawing.Point(107, 13);
             this.dtpMacTarih.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpMacTarih.Name = "dtpMacTarih";
-            this.dtpMacTarih.Size = new System.Drawing.Size(238, 27);
+            this.dtpMacTarih.Size = new System.Drawing.Size(293, 27);
             this.dtpMacTarih.TabIndex = 6;
             // 
             // cmbTakimB
@@ -140,7 +140,7 @@ namespace WeAreTheChampions
             this.cmbTakimB.Location = new System.Drawing.Point(107, 102);
             this.cmbTakimB.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbTakimB.Name = "cmbTakimB";
-            this.cmbTakimB.Size = new System.Drawing.Size(100, 27);
+            this.cmbTakimB.Size = new System.Drawing.Size(164, 27);
             this.cmbTakimB.TabIndex = 1;
             this.cmbTakimB.ValueMember = "Id";
             // 
@@ -161,7 +161,7 @@ namespace WeAreTheChampions
             this.cmbTakimA.Location = new System.Drawing.Point(107, 59);
             this.cmbTakimA.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbTakimA.Name = "cmbTakimA";
-            this.cmbTakimA.Size = new System.Drawing.Size(100, 27);
+            this.cmbTakimA.Size = new System.Drawing.Size(164, 27);
             this.cmbTakimA.TabIndex = 0;
             this.cmbTakimA.ValueMember = "Id";
             // 
@@ -179,8 +179,9 @@ namespace WeAreTheChampions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(368, 241);
+            this.ClientSize = new System.Drawing.Size(427, 243);
             this.Controls.Add(this.dtpMacTarih);
             this.Controls.Add(this.cmbSonuc);
             this.Controls.Add(this.label7);
@@ -197,7 +198,9 @@ namespace WeAreTheChampions
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "KarsilasmaDuzenleForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KarsilasmaDuzenleForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudSkorB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSkorA)).EndInit();

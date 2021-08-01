@@ -10,7 +10,7 @@ namespace WeAreTheChampions.Enums
 
     {
         Beraberlik = 0,
-        TakimA = 1,
-        TakimB = 2
+        Grup_A = 1,
+        Grup_B = 2
     }
 }

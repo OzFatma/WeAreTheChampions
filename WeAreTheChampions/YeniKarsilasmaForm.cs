@@ -35,8 +35,8 @@ namespace WeAreTheChampions
         private void SonuclariYukle()
         {
             cmbSonuc.Items.Add(Sonuc.Beraberlik);
-            cmbSonuc.Items.Add(Sonuc.TakimA);
-            cmbSonuc.Items.Add(Sonuc.TakimB);
+            cmbSonuc.Items.Add(Sonuc.Grup_A);
+            cmbSonuc.Items.Add(Sonuc.Grup_B);
 
         }
 
@@ -48,7 +48,11 @@ namespace WeAreTheChampions
 
         private void btnOlustur_Click(object sender, EventArgs e)
         {
-
+            if (cmbTakimA.SelectedIndex==-1||cmbTakimB.SelectedIndex==-1)
+            {
+                MessageBox.Show("İlgili maçın takımlarını seçiniz.");
+                return;
+            }
             Mac mac = new Mac()
             {
                 MacZamani = dtpMacTarih.Value,

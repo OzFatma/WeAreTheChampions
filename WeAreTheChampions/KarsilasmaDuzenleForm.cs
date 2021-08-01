@@ -29,8 +29,8 @@ namespace WeAreTheChampions
         private void SonuclariYukle()
         {
             cmbSonuc.Items.Add(Sonuc.Beraberlik);
-            cmbSonuc.Items.Add(Sonuc.TakimA);
-            cmbSonuc.Items.Add(Sonuc.TakimB);
+            cmbSonuc.Items.Add(Sonuc.Grup_A);
+            cmbSonuc.Items.Add(Sonuc.Grup_B);
 
         }
 

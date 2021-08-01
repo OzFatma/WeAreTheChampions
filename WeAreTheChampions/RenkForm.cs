@@ -14,6 +14,7 @@ namespace WeAreTheChampions
     public partial class RenkForm : Form
     {
         private readonly ChampionsContext _db;
+        public event EventHandler RenkEklendi;
         Renk secilen;
 
         public RenkForm(ChampionsContext db)
@@ -27,7 +28,15 @@ namespace WeAreTheChampions
 
         private void RenkleriYukle()
         {
+
             cmbRenkler.DataSource = _db.Renkler.ToList();
+            RenkEklendi += RenkForm_RenkEklendi;
+            
+        }
+
+        private void RenkForm_RenkEklendi(object sender, EventArgs e)
+        {
+            RenkleriYukle();
         }
 
         private void TakimlariYukle()
@@ -40,7 +49,7 @@ namespace WeAreTheChampions
             ColorDialog cd = new ColorDialog();
             cd.ShowDialog();
             lblRenk.BackColor = cd.Color;
-            lblRenk.Text = "";
+            lblRenk.Text = cd.Color.Name;
             txtAd.Text = cd.Color.Name;
             nudR.Value = cd.Color.R;
             nudG.Value = cd.Color.G;
@@ -85,8 +94,17 @@ namespace WeAreTheChampions
 
             _db.SaveChanges();
             RenkDuzenlePasif();
+            RenkEklendiginde(EventArgs.Empty);
             Listele();
             Temizle();
+        }
+
+        protected virtual void RenkEklendiginde(EventArgs args)
+        {
+            if (RenkEklendi!=null)
+            {
+                RenkEklendi(this, args);
+            }
         }
 
         private void RenkDuzenlePasif()
@@ -156,6 +174,7 @@ namespace WeAreTheChampions
             }
             takim.Renkler.Add(renk);
             _db.SaveChanges();
+            TakimRenkleriniListele();
         }
 
         private void TakimRenkleriniListele()

@@ -82,7 +82,7 @@ namespace WeAreTheChampions
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (dgvOyuncular.SelectedRows[0].Index == -1) return;
+            if (dgvOyuncular.SelectedRows.Count == 0) return;
 
             Oyuncu oyuncu = (Oyuncu)dgvOyuncular.SelectedRows[0].DataBoundItem;
             _db.Oyuncular.Remove(oyuncu);
@@ -92,7 +92,7 @@ namespace WeAreTheChampions
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            if (dgvOyuncular.SelectedRows.Count < 0) return;
+            if (dgvOyuncular.SelectedRows.Count == 0) return;
 
             duzenlenen = (Oyuncu)dgvOyuncular.SelectedRows[0].DataBoundItem;
             txtAd.Text = duzenlenen.OyuncuAd;

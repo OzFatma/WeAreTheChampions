@@ -15,7 +15,6 @@ namespace WeAreTheChampions
     public partial class AnaForm : Form
     {
         ChampionsContext db = new ChampionsContext();
-        Mac secilen = new Mac();
         public AnaForm()
         {
             InitializeComponent();
@@ -26,10 +25,10 @@ namespace WeAreTheChampions
         private void Listele()
         {
             IQueryable<Mac> sorgu = db.Maclar;
-            
+
             if (chkOynananGizle.Checked)
             {
-                sorgu = sorgu.Where(x => !x.Sonuc.HasValue );
+                sorgu = sorgu.Where(x => !x.Sonuc.HasValue);
             }
 
             dgvListe.DataSource = sorgu.OrderByDescending(x => x.MacZamani).ToList();
@@ -39,7 +38,7 @@ namespace WeAreTheChampions
         {
             TakimForm frm = new TakimForm(db);
             DialogResult dr = frm.ShowDialog();
-            
+
         }
 
         private void btnYeniKarsilasma_Click(object sender, EventArgs e)
@@ -68,6 +67,12 @@ namespace WeAreTheChampions
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (dgvListe.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Silmek istediğiniz maçı seçiniz.");
+                return;
+            }
+
             Mac secilen = (Mac)dgvListe.SelectedRows[0].DataBoundItem;
             db.Maclar.Remove(secilen);
             db.SaveChanges();
@@ -76,13 +81,18 @@ namespace WeAreTheChampions
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            secilen = (Mac)dgvListe.SelectedRows[0].DataBoundItem;
-            if (secilen!=null)
+
+            if (dgvListe.SelectedRows.Count == 0)
             {
-                KarsilasmaDuzenleForm frm = new KarsilasmaDuzenleForm(db,secilen);
+                MessageBox.Show("Düzenlemek istediğiniz maçı seçiniz.");
+                return;
+            }
+            else
+            {
+                Mac secilen = (Mac)dgvListe.SelectedRows[0].DataBoundItem;
+                KarsilasmaDuzenleForm frm = new KarsilasmaDuzenleForm(db, secilen);
                 frm.ListeGuncellendi += Frm_ListeGuncellendi1;
                 DialogResult dr = frm.ShowDialog();
-
             }
         }
 
